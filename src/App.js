@@ -4,55 +4,55 @@ import { API } from 'aws-amplify';
 import { listUsuarios } from './graphql/queries';
 import { createUsuarios as createUsuariosMutation, deleteUsuarios as deleteUsuariosMutation } from './graphql/mutations';
 
-const initialFormState = { name: '', description: '' }
+const initialFormState = { email: '', password: '' }
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchNotes();
+    fetchUsuarios();
   }, []);
 
-  async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes });
-    setNotes(apiData.data.listNotes.items);
+  async function fetchUsuarios() {
+    const apiData = await API.graphql({ query: listUsuarios });
+    setUsuarios(apiData.data.listUsuarios.items);
   }
 
-  async function createNote() {
-    if (!formData.name || !formData.description) return;
+  async function createUsuarios() {
+    if (!formData.email || !formData.password) return;
     await API.graphql({ query: createUsuariosMutation, variables: { input: formData } });
-    setNotes([ ...notes, formData ]);
+    setUsuarios([ ...usuarios, formData ]);
     setFormData(initialFormState);
   }
 
-  async function deleteNote({ id }) {
-    const newNotesArray = notes.filter(note => note.id !== id);
-    setNotes(newNotesArray);
+  async function deleteUsuarios({ id }) {
+    const newUsuariosArray = usuarios.filter(usuarios => usuarios.id !== id);
+    setUsuarios(newUsuariosArray);
     await API.graphql({ query: deleteUsuariosMutation, variables: { input: { id } }});
   }
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>Mis usuarios app</h1>
       <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
+        onChange={e => setFormData({ ...formData, 'email': e.target.value})}
+        placeholder="Usuario"
+        value={formData.email}
       />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
+      <input type="password"
+        onChange={e => setFormData({ ...formData, 'password': e.target.value})}
+        placeholder="Contraseña"
+        value={formData.password}
       />
-      <button onClick={createNote}>Crear Usuario</button>
+      <button onClick={createUsuarios}>Crear Usuario</button>
       <div style={{marginBottom: 30}}>
         {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Borrar Usuario</button>
+          usuarios.map(usuarios => (
+            <div key={usuarios.id || usuarios.email}>
+              <h2>{usuarios.email}</h2>
+              <p>{usuarios.password}</p>
+              <button onClick={() => deleteUsuarios(usuarios)}>Borrar Usuario</button>
             </div>
           ))
         }
