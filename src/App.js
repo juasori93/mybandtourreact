@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API } from '@aws-amplify';
+import { API } from 'aws-amplify';
 import { listUsuarios } from './graphql/queries';
 import { createUsuarios as createUsuariosMutation, deleteUsuarios as deleteUsuariosMutation } from './graphql/mutations';
 
