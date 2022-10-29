@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Puto el que lo lea</h1>
+      <h1>Usuarios</h1>
       <h1>Applicacion</h1>  
       <input
         onChange={e => setFormData({ ...formData, 'email': e.target.value})}
