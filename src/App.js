@@ -3,6 +3,7 @@ import './App.css';
 import { API } from 'aws-amplify';
 import { listUsuarios } from './graphql/queries';
 import { createUsuarios as createUsuariosMutation, deleteUsuarios as deleteUsuariosMutation } from './graphql/mutations';
+import Login  from './components/Login';
 
 const initialFormState = { email: '', password: '' }
 
@@ -33,6 +34,11 @@ function App() {
   }
 
   return (
+
+    <div>
+      <Login/>
+    </div>
+    /*
     <div className="App">
       <h1>Usuarios</h1>
       <h1>Applicacion</h1>  
@@ -59,6 +65,7 @@ function App() {
         }
       </div>
     </div>
+        */
   );
 }
 
