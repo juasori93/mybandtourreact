@@ -36,23 +36,27 @@ function App() {
   return (
 
     <div>
+      <h1>Hola mundo</h1>
+    </div>
+/*
+    <div>
       <Login/>
     </div>
-    /*
+    
     <div className="App">
       <h1>Usuarios</h1>
+
       <h1>Applicacion</h1>  
-      <input
-        onChange={e => setFormData({ ...formData, 'email': e.target.value})}
+      <input onChange={e => setFormData({ ...formData, 'email': e.target.value})}
         placeholder="Usuario"
         value={formData.email}
       />
-      <input type="password"
-        onChange={e => setFormData({ ...formData, 'password': e.target.value})}
+      <input type="password" onChange={e => setFormData({ ...formData, 'password': e.target.value})}
         placeholder="Contraseña"
         value={formData.password}
       />
       <button onClick={createUsuarios}>Crear Usuario</button>
+
       <div style={{marginBottom: 30}}>
         {
           usuarios.map(usuarios => (
