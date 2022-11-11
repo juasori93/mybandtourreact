@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/main.css'
 import '../css/util.css'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -27,7 +28,7 @@ const Login = () => {
 					<ul class="login-more p-t-190">
 						<li>
 							<span class="txt1"> Don’t have an account?</span>
-							<a href="#" class="txt2">Sign up</a>
+							<Link to='/Signup' class="txt2">Signup</Link>
 						</li>
 					</ul>
 				</form>
