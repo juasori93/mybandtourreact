@@ -1,65 +1,599 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUsuarios = /* GraphQL */ `
-  query GetUsuarios($id: ID!) {
-    getUsuarios(id: $id) {
+export const getTMBTCATPreferencia = /* GraphQL */ `
+  query GetTMBTCATPreferencia($id: ID!) {
+    getTMBTCATPreferencia(id: $id) {
       id
-      email
-      password
-      tipo
+      TN_Id_Tematica
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
-export const listUsuarios = /* GraphQL */ `
-  query ListUsuarios(
-    $filter: ModelUsuariosFilterInput
+export const listTMBTCATPreferencias = /* GraphQL */ `
+  query ListTMBTCATPreferencias(
+    $filter: ModelTMBTCATPreferenciaFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUsuarios(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTMBTCATPreferencias(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
-        email
-        password
-        tipo
+        TN_Id_Tematica
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       nextToken
+      startedAt
     }
   }
 `;
-export const getEvento = /* GraphQL */ `
-  query GetEvento($id: ID!) {
-    getEvento(id: $id) {
+export const syncTMBTCATPreferencias = /* GraphQL */ `
+  query SyncTMBTCATPreferencias(
+    $filter: ModelTMBTCATPreferenciaFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATPreferencias(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TN_Id_Tematica
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATTematica = /* GraphQL */ `
+  query GetTMBTCATTematica($id: ID!) {
+    getTMBTCATTematica(id: $id) {
       id
-      pais
-      banda
-      lugar
+      TC_Nombre
+      TC_Descripcion
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
-export const listEventos = /* GraphQL */ `
-  query ListEventos(
-    $filter: ModelEventoFilterInput
+export const listTMBTCATTematicas = /* GraphQL */ `
+  query ListTMBTCATTematicas(
+    $filter: ModelTMBTCATTematicaFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listEventos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTMBTCATTematicas(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
-        pais
-        banda
-        lugar
+        TC_Nombre
+        TC_Descripcion
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATTematicas = /* GraphQL */ `
+  query SyncTMBTCATTematicas(
+    $filter: ModelTMBTCATTematicaFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATTematicas(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TC_Nombre
+        TC_Descripcion
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATBoleto = /* GraphQL */ `
+  query GetTMBTCATBoleto($id: ID!) {
+    getTMBTCATBoleto(id: $id) {
+      id
+      TN_Id_Evento
+      TC_Fila
+      TC_Tipo
+      TC_Asiento
+      TN_Precio
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATBoletos = /* GraphQL */ `
+  query ListTMBTCATBoletos(
+    $filter: ModelTMBTCATBoletoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATBoletos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        TN_Id_Evento
+        TC_Fila
+        TC_Tipo
+        TC_Asiento
+        TN_Precio
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATBoletos = /* GraphQL */ `
+  query SyncTMBTCATBoletos(
+    $filter: ModelTMBTCATBoletoFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATBoletos(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TN_Id_Evento
+        TC_Fila
+        TC_Tipo
+        TC_Asiento
+        TN_Precio
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATUbicacion = /* GraphQL */ `
+  query GetTMBTCATUbicacion($id: ID!) {
+    getTMBTCATUbicacion(id: $id) {
+      id
+      TC_Pais
+      TC_Provincia
+      TC_Canton
+      TC_Distrito
+      TC_Descripcion
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATUbicacions = /* GraphQL */ `
+  query ListTMBTCATUbicacions(
+    $filter: ModelTMBTCATUbicacionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATUbicacions(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        TC_Pais
+        TC_Provincia
+        TC_Canton
+        TC_Distrito
+        TC_Descripcion
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATUbicacions = /* GraphQL */ `
+  query SyncTMBTCATUbicacions(
+    $filter: ModelTMBTCATUbicacionFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATUbicacions(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TC_Pais
+        TC_Provincia
+        TC_Canton
+        TC_Distrito
+        TC_Descripcion
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATRol = /* GraphQL */ `
+  query GetTMBTCATRol($id: ID!) {
+    getTMBTCATRol(id: $id) {
+      id
+      TN_Rol_Nombre
+      TC_Tipo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATRols = /* GraphQL */ `
+  query ListTMBTCATRols(
+    $filter: ModelTMBTCATRolFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATRols(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        TN_Rol_Nombre
+        TC_Tipo
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATRols = /* GraphQL */ `
+  query SyncTMBTCATRols(
+    $filter: ModelTMBTCATRolFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATRols(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TN_Rol_Nombre
+        TC_Tipo
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATFactura = /* GraphQL */ `
+  query GetTMBTCATFactura($id: ID!) {
+    getTMBTCATFactura(id: $id) {
+      id
+      TN_Id_Boleto
+      TN_Id_Cliente
+      TF_Fecha_Compra
+      TN_Cantidad_Boletos
+      TN_Subtotal
+      TN_Descuento
+      TN_Impuestos
+      TN_Total
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATFacturas = /* GraphQL */ `
+  query ListTMBTCATFacturas(
+    $filter: ModelTMBTCATFacturaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATFacturas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        TN_Id_Boleto
+        TN_Id_Cliente
+        TF_Fecha_Compra
+        TN_Cantidad_Boletos
+        TN_Subtotal
+        TN_Descuento
+        TN_Impuestos
+        TN_Total
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATFacturas = /* GraphQL */ `
+  query SyncTMBTCATFacturas(
+    $filter: ModelTMBTCATFacturaFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATFacturas(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TN_Id_Boleto
+        TN_Id_Cliente
+        TF_Fecha_Compra
+        TN_Cantidad_Boletos
+        TN_Subtotal
+        TN_Descuento
+        TN_Impuestos
+        TN_Total
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATUsuario = /* GraphQL */ `
+  query GetTMBTCATUsuario($id: ID!) {
+    getTMBTCATUsuario(id: $id) {
+      id
+      TC_Correo
+      TN_Telefono
+      TC_Nombre
+      TC_Apellido1
+      TC_Apellido2
+      TC_Clave
+      TC_Credit_Card
+      TN_Id_Ubicacion
+      TN_id_Rol
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATUsuarios = /* GraphQL */ `
+  query ListTMBTCATUsuarios(
+    $filter: ModelTMBTCATUsuarioFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATUsuarios(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        TC_Correo
+        TN_Telefono
+        TC_Nombre
+        TC_Apellido1
+        TC_Apellido2
+        TC_Clave
+        TC_Credit_Card
+        TN_Id_Ubicacion
+        TN_id_Rol
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATUsuarios = /* GraphQL */ `
+  query SyncTMBTCATUsuarios(
+    $filter: ModelTMBTCATUsuarioFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATUsuarios(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TC_Correo
+        TN_Telefono
+        TC_Nombre
+        TC_Apellido1
+        TC_Apellido2
+        TC_Clave
+        TC_Credit_Card
+        TN_Id_Ubicacion
+        TN_id_Rol
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTMBTCATEvento = /* GraphQL */ `
+  query GetTMBTCATEvento($id: ID!) {
+    getTMBTCATEvento(id: $id) {
+      id
+      TC_Nombre
+      TC_Descripcion
+      TC_Tipo
+      TN_Id_Ubicacion
+      TF_Fecha
+      TN_Cantidad_vendidas
+      TN_Cantidad_disponible
+      TN_Id_Tematica
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listTMBTCATEventos = /* GraphQL */ `
+  query ListTMBTCATEventos(
+    $filter: ModelTMBTCATEventoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTMBTCATEventos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTMBTCATEventos = /* GraphQL */ `
+  query SyncTMBTCATEventos(
+    $filter: ModelTMBTCATEventoFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTMBTCATEventos(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;
