@@ -4,9 +4,15 @@ import { schema } from './schema';
 
 
 
-const { Usuarios, evento } = initSchema(schema);
+const { TMBTCATPreferencia, TMBTCATTematica, TMBTCATBoleto, TMBTCATUbicacion, TMBTCATRol, TMBTCATFactura, TMBTCATUsuario, TMBTCATEvento } = initSchema(schema);
 
 export {
-  Usuarios,
-  evento
+  TMBTCATPreferencia,
+  TMBTCATTematica,
+  TMBTCATBoleto,
+  TMBTCATUbicacion,
+  TMBTCATRol,
+  TMBTCATFactura,
+  TMBTCATUsuario,
+  TMBTCATEvento
 };

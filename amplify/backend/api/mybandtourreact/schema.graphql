@@ -1,14 +1,71 @@
-type Usuarios @model @auth(rules: [{allow: public}]) {
+type TMBTCATPreferencia @model @auth(rules: [{allow: public}]) {
   id: ID!
-  email: String!
-  password: String
-  tipo: String
+  TN_Id_Tematica: ID
 }
 
-type evento @model @auth(rules: [{allow: public}]) {
+type TMBTCATTematica @model @auth(rules: [{allow: public}]) {
   id: ID!
-  pais: String
-  banda: String
-  lugar: String
+  TC_Nombre: String
+  TC_Descripcion: String
 }
- 
+
+type TMBTCATBoleto @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TN_Id_Evento: String
+  TC_Fila: Int
+  TC_Tipo: String
+  TC_Asiento: Int
+  TN_Precio: Float
+}
+
+type TMBTCATUbicacion @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TC_Pais: String
+  TC_Provincia: String
+  TC_Canton: String
+  TC_Distrito: String
+  TC_Descripcion: String
+}
+
+type TMBTCATRol @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TN_Rol_Nombre: String
+  TC_Tipo: String
+}
+
+type TMBTCATFactura @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TN_Id_Boleto: String
+  TN_Id_Cliente: ID
+  TF_Fecha_Compra: AWSDate
+  TN_Cantidad_Boletos: Int
+  TN_Subtotal: Float
+  TN_Descuento: Float
+  TN_Impuestos: Float
+  TN_Total: Float
+}
+
+type TMBTCATUsuario @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TC_Correo: AWSEmail!
+  TN_Telefono: String
+  TC_Nombre: String
+  TC_Apellido1: String
+  TC_Apellido2: String
+  TC_Clave: AWSPhone
+  TC_Credit_Card: String
+  TN_Id_Ubicacion: Int
+  TN_id_Rol: String
+}
+
+type TMBTCATEvento @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TC_Nombre: String
+  TC_Descripcion: String
+  TC_Tipo: String
+  TN_Id_Ubicacion: Int
+  TF_Fecha: AWSDateTime
+  TN_Cantidad_vendidas: Int
+  TN_Cantidad_disponible: Int
+  TN_Id_Tematica: String
+} 
