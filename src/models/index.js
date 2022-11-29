@@ -4,15 +4,16 @@ import { schema } from './schema';
 
 
 
-const { TMBTCATPreferencia, TMBTCATTematica, TMBTCATBoleto, TMBTCATUbicacion, TMBTCATRol, TMBTCATFactura, TMBTCATUsuario, TMBTCATEvento } = initSchema(schema);
+const { TMBTCATPreferencia, TMBTCATTematica, TMBTCATBoleto, TMBTCATEvento, TMBTCATUbicacion, TMBTCATRol, TMBTCATFactura, TMBTCATUsuario, TMBTCATEventoTMBTCATUbicacion } = initSchema(schema);
 
 export {
   TMBTCATPreferencia,
   TMBTCATTematica,
   TMBTCATBoleto,
+  TMBTCATEvento,
   TMBTCATUbicacion,
   TMBTCATRol,
   TMBTCATFactura,
   TMBTCATUsuario,
-  TMBTCATEvento
+  TMBTCATEventoTMBTCATUbicacion
 };

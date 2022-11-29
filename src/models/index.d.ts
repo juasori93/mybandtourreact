@@ -12,6 +12,10 @@ type TMBTCATBoletoMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+type TMBTCATEventoMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type TMBTCATUbicacionMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -28,13 +32,14 @@ type TMBTCATUsuarioMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type TMBTCATEventoMetaData = {
+type TMBTCATEventoTMBTCATUbicacionMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
 export declare class TMBTCATPreferencia {
   readonly id: string;
   readonly TN_Id_Tematica?: string | null;
+  readonly TMBTCATTematicas?: (TMBTCATTematica | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<TMBTCATPreferencia, TMBTCATPreferenciaMetaData>);
@@ -45,6 +50,7 @@ export declare class TMBTCATTematica {
   readonly id: string;
   readonly TC_Nombre?: string | null;
   readonly TC_Descripcion?: string | null;
+  readonly tmbtcatpreferenciaID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<TMBTCATTematica, TMBTCATTematicaMetaData>);
@@ -58,10 +64,29 @@ export declare class TMBTCATBoleto {
   readonly TC_Tipo?: string | null;
   readonly TC_Asiento?: number | null;
   readonly TN_Precio?: number | null;
+  readonly TMBTCATEvento?: TMBTCATEvento | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly tMBTCATBoletoTMBTCATEventoId?: string | null;
   constructor(init: ModelInit<TMBTCATBoleto, TMBTCATBoletoMetaData>);
   static copyOf(source: TMBTCATBoleto, mutator: (draft: MutableModel<TMBTCATBoleto, TMBTCATBoletoMetaData>) => MutableModel<TMBTCATBoleto, TMBTCATBoletoMetaData> | void): TMBTCATBoleto;
+}
+
+export declare class TMBTCATEvento {
+  readonly id: string;
+  readonly TC_Nombre?: string | null;
+  readonly TC_Descripcion?: string | null;
+  readonly TC_Tipo?: string | null;
+  readonly TN_Id_Ubicacion?: number | null;
+  readonly TF_Fecha?: string | null;
+  readonly TN_Cantidad_vendidas?: number | null;
+  readonly TN_Cantidad_disponible?: number | null;
+  readonly TN_Id_Tematica?: string | null;
+  readonly TMBTCATUbicacions?: (TMBTCATEventoTMBTCATUbicacion | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<TMBTCATEvento, TMBTCATEventoMetaData>);
+  static copyOf(source: TMBTCATEvento, mutator: (draft: MutableModel<TMBTCATEvento, TMBTCATEventoMetaData>) => MutableModel<TMBTCATEvento, TMBTCATEventoMetaData> | void): TMBTCATEvento;
 }
 
 export declare class TMBTCATUbicacion {
@@ -71,6 +96,7 @@ export declare class TMBTCATUbicacion {
   readonly TC_Canton?: string | null;
   readonly TC_Distrito?: string | null;
   readonly TC_Descripcion?: string | null;
+  readonly tmbtcateventos?: (TMBTCATEventoTMBTCATUbicacion | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<TMBTCATUbicacion, TMBTCATUbicacionMetaData>);
@@ -81,6 +107,7 @@ export declare class TMBTCATRol {
   readonly id: string;
   readonly TN_Rol_Nombre?: string | null;
   readonly TC_Tipo?: string | null;
+  readonly tmbtcatusuarioID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<TMBTCATRol, TMBTCATRolMetaData>);
@@ -97,8 +124,10 @@ export declare class TMBTCATFactura {
   readonly TN_Descuento?: number | null;
   readonly TN_Impuestos?: number | null;
   readonly TN_Total?: number | null;
+  readonly TMBTCATUsuario?: TMBTCATUsuario | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly tMBTCATFacturaTMBTCATUsuarioId?: string | null;
   constructor(init: ModelInit<TMBTCATFactura, TMBTCATFacturaMetaData>);
   static copyOf(source: TMBTCATFactura, mutator: (draft: MutableModel<TMBTCATFactura, TMBTCATFacturaMetaData>) => MutableModel<TMBTCATFactura, TMBTCATFacturaMetaData> | void): TMBTCATFactura;
 }
@@ -114,24 +143,19 @@ export declare class TMBTCATUsuario {
   readonly TC_Credit_Card?: string | null;
   readonly TN_Id_Ubicacion?: number | null;
   readonly TN_id_Rol?: string | null;
+  readonly TMBTCATRols?: (TMBTCATRol | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<TMBTCATUsuario, TMBTCATUsuarioMetaData>);
   static copyOf(source: TMBTCATUsuario, mutator: (draft: MutableModel<TMBTCATUsuario, TMBTCATUsuarioMetaData>) => MutableModel<TMBTCATUsuario, TMBTCATUsuarioMetaData> | void): TMBTCATUsuario;
 }
 
-export declare class TMBTCATEvento {
+export declare class TMBTCATEventoTMBTCATUbicacion {
   readonly id: string;
-  readonly TC_Nombre?: string | null;
-  readonly TC_Descripcion?: string | null;
-  readonly TC_Tipo?: string | null;
-  readonly TN_Id_Ubicacion?: number | null;
-  readonly TF_Fecha?: string | null;
-  readonly TN_Cantidad_vendidas?: number | null;
-  readonly TN_Cantidad_disponible?: number | null;
-  readonly TN_Id_Tematica?: string | null;
+  readonly tmbtcatEvento: TMBTCATEvento;
+  readonly tmbtcatUbicacion: TMBTCATUbicacion;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<TMBTCATEvento, TMBTCATEventoMetaData>);
-  static copyOf(source: TMBTCATEvento, mutator: (draft: MutableModel<TMBTCATEvento, TMBTCATEventoMetaData>) => MutableModel<TMBTCATEvento, TMBTCATEventoMetaData> | void): TMBTCATEvento;
+  constructor(init: ModelInit<TMBTCATEventoTMBTCATUbicacion, TMBTCATEventoTMBTCATUbicacionMetaData>);
+  static copyOf(source: TMBTCATEventoTMBTCATUbicacion, mutator: (draft: MutableModel<TMBTCATEventoTMBTCATUbicacion, TMBTCATEventoTMBTCATUbicacionMetaData>) => MutableModel<TMBTCATEventoTMBTCATUbicacion, TMBTCATEventoTMBTCATUbicacionMetaData> | void): TMBTCATEventoTMBTCATUbicacion;
 }

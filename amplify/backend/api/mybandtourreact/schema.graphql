@@ -1,12 +1,14 @@
 type TMBTCATPreferencia @model @auth(rules: [{allow: public}]) {
   id: ID!
   TN_Id_Tematica: ID
+  TMBTCATTematicas: [TMBTCATTematica] @hasMany(indexName: "byTMBTCATPreferencia", fields: ["id"])
 }
 
 type TMBTCATTematica @model @auth(rules: [{allow: public}]) {
   id: ID!
   TC_Nombre: String
   TC_Descripcion: String
+  tmbtcatpreferenciaID: ID! @index(name: "byTMBTCATPreferencia")
 }
 
 type TMBTCATBoleto @model @auth(rules: [{allow: public}]) {
@@ -16,6 +18,7 @@ type TMBTCATBoleto @model @auth(rules: [{allow: public}]) {
   TC_Tipo: String
   TC_Asiento: Int
   TN_Precio: Float
+  TMBTCATEvento: TMBTCATEvento @hasOne
 }
 
 type TMBTCATUbicacion @model @auth(rules: [{allow: public}]) {
@@ -25,12 +28,14 @@ type TMBTCATUbicacion @model @auth(rules: [{allow: public}]) {
   TC_Canton: String
   TC_Distrito: String
   TC_Descripcion: String
+  tmbtcateventos: [TMBTCATEvento] @manyToMany(relationName: "TMBTCATEventoTMBTCATUbicacion")
 }
 
 type TMBTCATRol @model @auth(rules: [{allow: public}]) {
   id: ID!
   TN_Rol_Nombre: String
   TC_Tipo: String
+  tmbtcatusuarioID: ID! @index(name: "byTMBTCATUsuario")
 }
 
 type TMBTCATFactura @model @auth(rules: [{allow: public}]) {
@@ -43,6 +48,7 @@ type TMBTCATFactura @model @auth(rules: [{allow: public}]) {
   TN_Descuento: Float
   TN_Impuestos: Float
   TN_Total: Float
+  TMBTCATUsuario: TMBTCATUsuario @hasOne
 }
 
 type TMBTCATUsuario @model @auth(rules: [{allow: public}]) {
@@ -56,6 +62,7 @@ type TMBTCATUsuario @model @auth(rules: [{allow: public}]) {
   TC_Credit_Card: String
   TN_Id_Ubicacion: Int
   TN_id_Rol: String
+  TMBTCATRols: [TMBTCATRol] @hasMany(indexName: "byTMBTCATUsuario", fields: ["id"])
 }
 
 type TMBTCATEvento @model @auth(rules: [{allow: public}]) {
@@ -68,4 +75,6 @@ type TMBTCATEvento @model @auth(rules: [{allow: public}]) {
   TN_Cantidad_vendidas: Int
   TN_Cantidad_disponible: Int
   TN_Id_Tematica: String
-} 
+  TMBTCATUbicacions: [TMBTCATUbicacion] @manyToMany(relationName: "TMBTCATEventoTMBTCATUbicacion")
+}
+ 

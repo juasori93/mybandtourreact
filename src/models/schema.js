@@ -17,6 +17,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "TMBTCATTematicas": {
+                    "name": "TMBTCATTematicas",
+                    "isArray": true,
+                    "type": {
+                        "model": "TMBTCATTematica"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "tmbtcatpreferenciaID"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -83,6 +97,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "tmbtcatpreferenciaID": {
+                    "name": "tmbtcatpreferenciaID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -106,6 +127,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTMBTCATPreferencia",
+                        "fields": [
+                            "tmbtcatpreferenciaID"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -170,6 +200,149 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "TMBTCATEvento": {
+                    "name": "TMBTCATEvento",
+                    "isArray": false,
+                    "type": {
+                        "model": "TMBTCATEvento"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": "id",
+                        "targetName": "tMBTCATBoletoTMBTCATEventoId"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "tMBTCATBoletoTMBTCATEventoId": {
+                    "name": "tMBTCATBoletoTMBTCATEventoId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "TMBTCATBoletos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "TMBTCATEvento": {
+            "name": "TMBTCATEvento",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "TC_Nombre": {
+                    "name": "TC_Nombre",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TC_Descripcion": {
+                    "name": "TC_Descripcion",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TC_Tipo": {
+                    "name": "TC_Tipo",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TN_Id_Ubicacion": {
+                    "name": "TN_Id_Ubicacion",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TF_Fecha": {
+                    "name": "TF_Fecha",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TN_Cantidad_vendidas": {
+                    "name": "TN_Cantidad_vendidas",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TN_Cantidad_disponible": {
+                    "name": "TN_Cantidad_disponible",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TN_Id_Tematica": {
+                    "name": "TN_Id_Tematica",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "TMBTCATUbicacions": {
+                    "name": "TMBTCATUbicacions",
+                    "isArray": true,
+                    "type": {
+                        "model": "TMBTCATEventoTMBTCATUbicacion"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "tmbtcatEvento"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -188,7 +361,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "TMBTCATBoletos",
+            "pluralName": "TMBTCATEventos",
             "attributes": [
                 {
                     "type": "model",
@@ -257,6 +430,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "tmbtcateventos": {
+                    "name": "tmbtcateventos",
+                    "isArray": true,
+                    "type": {
+                        "model": "TMBTCATEventoTMBTCATUbicacion"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "tmbtcatUbicacion"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -323,6 +510,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "tmbtcatusuarioID": {
+                    "name": "tmbtcatusuarioID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -346,6 +540,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTMBTCATUsuario",
+                        "fields": [
+                            "tmbtcatusuarioID"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -431,6 +634,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "TMBTCATUsuario": {
+                    "name": "TMBTCATUsuario",
+                    "isArray": false,
+                    "type": {
+                        "model": "TMBTCATUsuario"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": "id",
+                        "targetName": "tMBTCATFacturaTMBTCATUsuarioId"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -446,6 +663,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "tMBTCATFacturaTMBTCATUsuarioId": {
+                    "name": "tMBTCATFacturaTMBTCATUsuarioId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -546,6 +770,20 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "TMBTCATRols": {
+                    "name": "TMBTCATRols",
+                    "isArray": true,
+                    "type": {
+                        "model": "TMBTCATRol"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "tmbtcatusuarioID"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -588,8 +826,8 @@ export const schema = {
                 }
             ]
         },
-        "TMBTCATEvento": {
-            "name": "TMBTCATEvento",
+        "TMBTCATEventoTMBTCATUbicacion": {
+            "name": "TMBTCATEventoTMBTCATUbicacion",
             "fields": {
                 "id": {
                     "name": "id",
@@ -598,61 +836,31 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "TC_Nombre": {
-                    "name": "TC_Nombre",
+                "tmbtcatEvento": {
+                    "name": "tmbtcatEvento",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
+                    "type": {
+                        "model": "TMBTCATEvento"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "tmbtcatEventoID"
+                    }
                 },
-                "TC_Descripcion": {
-                    "name": "TC_Descripcion",
+                "tmbtcatUbicacion": {
+                    "name": "tmbtcatUbicacion",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TC_Tipo": {
-                    "name": "TC_Tipo",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TN_Id_Ubicacion": {
-                    "name": "TN_Id_Ubicacion",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TF_Fecha": {
-                    "name": "TF_Fecha",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TN_Cantidad_vendidas": {
-                    "name": "TN_Cantidad_vendidas",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TN_Cantidad_disponible": {
-                    "name": "TN_Cantidad_disponible",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "TN_Id_Tematica": {
-                    "name": "TN_Id_Tematica",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
+                    "type": {
+                        "model": "TMBTCATUbicacion"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "tmbtcatUbicacionID"
+                    }
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -672,25 +880,27 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "TMBTCATEventos",
+            "pluralName": "TMBTCATEventoTMBTCATUbicacions",
             "attributes": [
                 {
                     "type": "model",
                     "properties": {}
                 },
                 {
-                    "type": "auth",
+                    "type": "key",
                     "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
+                        "name": "byTMBTCATEvento",
+                        "fields": [
+                            "tmbtcatEventoID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTMBTCATUbicacion",
+                        "fields": [
+                            "tmbtcatUbicacionID"
                         ]
                     }
                 }
@@ -699,5 +909,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "c4e0844dd737bd07489f3a2316a16016"
+    "version": "4835a4b2c3444ea8e417251905606fff"
 };

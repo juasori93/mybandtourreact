@@ -9,6 +9,21 @@ export const createTMBTCATPreferencia = /* GraphQL */ `
     createTMBTCATPreferencia(input: $input, condition: $condition) {
       id
       TN_Id_Tematica
+      TMBTCATTematicas {
+        items {
+          id
+          TC_Nombre
+          TC_Descripcion
+          tmbtcatpreferenciaID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -25,6 +40,21 @@ export const updateTMBTCATPreferencia = /* GraphQL */ `
     updateTMBTCATPreferencia(input: $input, condition: $condition) {
       id
       TN_Id_Tematica
+      TMBTCATTematicas {
+        items {
+          id
+          TC_Nombre
+          TC_Descripcion
+          tmbtcatpreferenciaID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -41,6 +71,21 @@ export const deleteTMBTCATPreferencia = /* GraphQL */ `
     deleteTMBTCATPreferencia(input: $input, condition: $condition) {
       id
       TN_Id_Tematica
+      TMBTCATTematicas {
+        items {
+          id
+          TC_Nombre
+          TC_Descripcion
+          tmbtcatpreferenciaID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -58,6 +103,7 @@ export const createTMBTCATTematica = /* GraphQL */ `
       id
       TC_Nombre
       TC_Descripcion
+      tmbtcatpreferenciaID
       createdAt
       updatedAt
       _version
@@ -75,6 +121,7 @@ export const updateTMBTCATTematica = /* GraphQL */ `
       id
       TC_Nombre
       TC_Descripcion
+      tmbtcatpreferenciaID
       createdAt
       updatedAt
       _version
@@ -92,6 +139,7 @@ export const deleteTMBTCATTematica = /* GraphQL */ `
       id
       TC_Nombre
       TC_Descripcion
+      tmbtcatpreferenciaID
       createdAt
       updatedAt
       _version
@@ -112,11 +160,32 @@ export const createTMBTCATBoleto = /* GraphQL */ `
       TC_Tipo
       TC_Asiento
       TN_Precio
+      TMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATBoletoTMBTCATEventoId
     }
   }
 `;
@@ -132,11 +201,32 @@ export const updateTMBTCATBoleto = /* GraphQL */ `
       TC_Tipo
       TC_Asiento
       TN_Precio
+      TMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATBoletoTMBTCATEventoId
     }
   }
 `;
@@ -152,11 +242,32 @@ export const deleteTMBTCATBoleto = /* GraphQL */ `
       TC_Tipo
       TC_Asiento
       TN_Precio
+      TMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATBoletoTMBTCATEventoId
     }
   }
 `;
@@ -172,6 +283,20 @@ export const createTMBTCATUbicacion = /* GraphQL */ `
       TC_Canton
       TC_Distrito
       TC_Descripcion
+      tmbtcateventos {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -192,6 +317,20 @@ export const updateTMBTCATUbicacion = /* GraphQL */ `
       TC_Canton
       TC_Distrito
       TC_Descripcion
+      tmbtcateventos {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -212,6 +351,20 @@ export const deleteTMBTCATUbicacion = /* GraphQL */ `
       TC_Canton
       TC_Distrito
       TC_Descripcion
+      tmbtcateventos {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -229,6 +382,7 @@ export const createTMBTCATRol = /* GraphQL */ `
       id
       TN_Rol_Nombre
       TC_Tipo
+      tmbtcatusuarioID
       createdAt
       updatedAt
       _version
@@ -246,6 +400,7 @@ export const updateTMBTCATRol = /* GraphQL */ `
       id
       TN_Rol_Nombre
       TC_Tipo
+      tmbtcatusuarioID
       createdAt
       updatedAt
       _version
@@ -263,6 +418,7 @@ export const deleteTMBTCATRol = /* GraphQL */ `
       id
       TN_Rol_Nombre
       TC_Tipo
+      tmbtcatusuarioID
       createdAt
       updatedAt
       _version
@@ -286,11 +442,33 @@ export const createTMBTCATFactura = /* GraphQL */ `
       TN_Descuento
       TN_Impuestos
       TN_Total
+      TMBTCATUsuario {
+        id
+        TC_Correo
+        TN_Telefono
+        TC_Nombre
+        TC_Apellido1
+        TC_Apellido2
+        TC_Clave
+        TC_Credit_Card
+        TN_Id_Ubicacion
+        TN_id_Rol
+        TMBTCATRols {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATFacturaTMBTCATUsuarioId
     }
   }
 `;
@@ -309,11 +487,33 @@ export const updateTMBTCATFactura = /* GraphQL */ `
       TN_Descuento
       TN_Impuestos
       TN_Total
+      TMBTCATUsuario {
+        id
+        TC_Correo
+        TN_Telefono
+        TC_Nombre
+        TC_Apellido1
+        TC_Apellido2
+        TC_Clave
+        TC_Credit_Card
+        TN_Id_Ubicacion
+        TN_id_Rol
+        TMBTCATRols {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATFacturaTMBTCATUsuarioId
     }
   }
 `;
@@ -332,11 +532,33 @@ export const deleteTMBTCATFactura = /* GraphQL */ `
       TN_Descuento
       TN_Impuestos
       TN_Total
+      TMBTCATUsuario {
+        id
+        TC_Correo
+        TN_Telefono
+        TC_Nombre
+        TC_Apellido1
+        TC_Apellido2
+        TC_Clave
+        TC_Credit_Card
+        TN_Id_Ubicacion
+        TN_id_Rol
+        TMBTCATRols {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      tMBTCATFacturaTMBTCATUsuarioId
     }
   }
 `;
@@ -356,6 +578,21 @@ export const createTMBTCATUsuario = /* GraphQL */ `
       TC_Credit_Card
       TN_Id_Ubicacion
       TN_id_Rol
+      TMBTCATRols {
+        items {
+          id
+          TN_Rol_Nombre
+          TC_Tipo
+          tmbtcatusuarioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -380,6 +617,21 @@ export const updateTMBTCATUsuario = /* GraphQL */ `
       TC_Credit_Card
       TN_Id_Ubicacion
       TN_id_Rol
+      TMBTCATRols {
+        items {
+          id
+          TN_Rol_Nombre
+          TC_Tipo
+          tmbtcatusuarioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -404,6 +656,21 @@ export const deleteTMBTCATUsuario = /* GraphQL */ `
       TC_Credit_Card
       TN_Id_Ubicacion
       TN_id_Rol
+      TMBTCATRols {
+        items {
+          id
+          TN_Rol_Nombre
+          TC_Tipo
+          tmbtcatusuarioID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -427,6 +694,20 @@ export const createTMBTCATEvento = /* GraphQL */ `
       TN_Cantidad_vendidas
       TN_Cantidad_disponible
       TN_Id_Tematica
+      TMBTCATUbicacions {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -450,6 +731,20 @@ export const updateTMBTCATEvento = /* GraphQL */ `
       TN_Cantidad_vendidas
       TN_Cantidad_disponible
       TN_Id_Tematica
+      TMBTCATUbicacions {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -473,6 +768,182 @@ export const deleteTMBTCATEvento = /* GraphQL */ `
       TN_Cantidad_vendidas
       TN_Cantidad_disponible
       TN_Id_Tematica
+      TMBTCATUbicacions {
+        items {
+          id
+          tMBTCATUbicacionID
+          tMBTCATEventoID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createTMBTCATEventoTMBTCATUbicacion = /* GraphQL */ `
+  mutation CreateTMBTCATEventoTMBTCATUbicacion(
+    $input: CreateTMBTCATEventoTMBTCATUbicacionInput!
+    $condition: ModelTMBTCATEventoTMBTCATUbicacionConditionInput
+  ) {
+    createTMBTCATEventoTMBTCATUbicacion(input: $input, condition: $condition) {
+      id
+      tMBTCATUbicacionID
+      tMBTCATEventoID
+      tMBTCATUbicacion {
+        id
+        TC_Pais
+        TC_Provincia
+        TC_Canton
+        TC_Distrito
+        TC_Descripcion
+        tmbtcateventos {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      tMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateTMBTCATEventoTMBTCATUbicacion = /* GraphQL */ `
+  mutation UpdateTMBTCATEventoTMBTCATUbicacion(
+    $input: UpdateTMBTCATEventoTMBTCATUbicacionInput!
+    $condition: ModelTMBTCATEventoTMBTCATUbicacionConditionInput
+  ) {
+    updateTMBTCATEventoTMBTCATUbicacion(input: $input, condition: $condition) {
+      id
+      tMBTCATUbicacionID
+      tMBTCATEventoID
+      tMBTCATUbicacion {
+        id
+        TC_Pais
+        TC_Provincia
+        TC_Canton
+        TC_Distrito
+        TC_Descripcion
+        tmbtcateventos {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      tMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteTMBTCATEventoTMBTCATUbicacion = /* GraphQL */ `
+  mutation DeleteTMBTCATEventoTMBTCATUbicacion(
+    $input: DeleteTMBTCATEventoTMBTCATUbicacionInput!
+    $condition: ModelTMBTCATEventoTMBTCATUbicacionConditionInput
+  ) {
+    deleteTMBTCATEventoTMBTCATUbicacion(input: $input, condition: $condition) {
+      id
+      tMBTCATUbicacionID
+      tMBTCATEventoID
+      tMBTCATUbicacion {
+        id
+        TC_Pais
+        TC_Provincia
+        TC_Canton
+        TC_Distrito
+        TC_Descripcion
+        tmbtcateventos {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      tMBTCATEvento {
+        id
+        TC_Nombre
+        TC_Descripcion
+        TC_Tipo
+        TN_Id_Ubicacion
+        TF_Fecha
+        TN_Cantidad_vendidas
+        TN_Cantidad_disponible
+        TN_Id_Tematica
+        TMBTCATUbicacions {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
