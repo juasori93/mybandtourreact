@@ -745,7 +745,7 @@ export const schema = {
                 "TC_Clave": {
                     "name": "TC_Clave",
                     "isArray": false,
-                    "type": "AWSPhone",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -909,5 +909,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "4835a4b2c3444ea8e417251905606fff"
+    "version": "73baa3a8d0b0626bd4278c873587ce45"
 };

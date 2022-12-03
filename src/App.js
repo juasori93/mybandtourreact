@@ -1,38 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API } from 'aws-amplify';
-import { listUsuarios } from './graphql/queries';
-import { createUsuarios as createUsuariosMutation, deleteUsuarios as deleteUsuariosMutation } from './graphql/mutations';
 import Login  from './components/Login';
 
 const initialFormState = { email: '', password: '' }
 
 function App() {
-  const [usuarios, setUsuarios] = useState([]);
-  const [formData, setFormData] = useState(initialFormState);
-
-  useEffect(() => {
-    fetchUsuarios();
-  }, []);
-
-  async function fetchUsuarios() {
-    const apiData = await API.graphql({ query: listUsuarios });
-    setUsuarios(apiData.data.listUsuarios.items);
-  }
-
-  async function createUsuarios() {
-    if (!formData.email || !formData.password) return;
-    await API.graphql({ query: createUsuariosMutation, variables: { input: formData } });
-    setUsuarios([ ...usuarios, formData ]);
-    setFormData(initialFormState);
-  }
-
-  async function deleteUsuarios({ id }) {
-    const newUsuariosArray = usuarios.filter(usuarios => usuarios.id !== id);
-    setUsuarios(newUsuariosArray);
-    await API.graphql({ query: deleteUsuariosMutation, variables: { input: { id } }});
-  }
-
   return (
 
     <div>

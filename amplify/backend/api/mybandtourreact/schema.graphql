@@ -58,7 +58,7 @@ type TMBTCATUsuario @model @auth(rules: [{allow: public}]) {
   TC_Nombre: String
   TC_Apellido1: String
   TC_Apellido2: String
-  TC_Clave: AWSPhone
+  TC_Clave: String
   TC_Credit_Card: String
   TN_Id_Ubicacion: Int
   TN_id_Rol: String
