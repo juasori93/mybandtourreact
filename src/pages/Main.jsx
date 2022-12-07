@@ -11,7 +11,9 @@ const Main = () => {
   return (
     <div>
       <Header />
-
+      <Banner />
+      <Events />
+      <Footer />
     </div>
   )
 }
