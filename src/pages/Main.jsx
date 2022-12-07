@@ -1,16 +1,16 @@
 import React from 'react'
 import Signup from './Signup'
 import { HashRouter, NavLink } from 'react-router-dom'
+import '../css/style.css'
+import '../css/templatemo-training-studio.css'
+import Header from '../components/Header'
 
-const main = () => {
+const Main = () => {
   return (
-    <div class='limiter'>
-      <h1 class="login100-form-title p-b-70">
-        Main
-      </h1>
-      <li> <NavLink to="/Signup"> SignUp </NavLink></li>
+    <div>
+      <p>Main</p>
     </div>
   )
 }
 
-export default main
+export default Main
