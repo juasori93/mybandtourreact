@@ -1,21 +1,45 @@
 import React from 'react'
+import '../css/font-awesome.css'
+import '../css/templatemo-training-studio.css'
+import '../css/animate.css'
+import '../css/set.css'
+import '../css/blueimp-gallery.min.css'
+import event1 from '../assets/images/music1.jpg'
+
 
 const Events = () => {
   return (
     <div>
       <section>
-        <div id="events" class=" clearfix grid">
+        <div id="events" class="clearfix grid">
           <figure class="effect-oscar  wowload fadeInUp">
-            <img src="assets/images/music1.jpg" alt="img01" />
+            <img src={event1} alt="img01" />
             <figcaption>
-              <h2>Evento</h2>
+              <h2>Event 1 </h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
                 aut ad.
-                <a href="assets/images/music1.jpg" title="1" data-gallery class="btn btn-default explore">Ver
-                  Más</a>
               </p>
             </figcaption>
           </figure>
+          <figure class="effect-oscar  wowload fadeInUp">
+            <img src={event1} alt="img01" />
+            <figcaption>
+              <h2>Event 1 </h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
+                aut ad.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="effect-oscar  wowload fadeInUp">
+            <img src={event1} alt="img01" />
+            <figcaption>
+              <h2>Event 1 </h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
+                aut ad.
+              </p>
+            </figcaption>
+          </figure>
+
           </div>
       </section>
     </div>
