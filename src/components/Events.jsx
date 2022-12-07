@@ -24,34 +24,6 @@ const Events = () => {
           </div>
       </section>
 
-      <section>
-        <div id="events" class="clearfix grid">
-          <figure class="effect-oscar  wowload fadeInUp">
-            <img src={event1} alt="img01" />
-            <figcaption>
-              <h2>Event 1 </h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
-                aut ad.
-              </p>
-            </figcaption>
-          </figure>
-          </div>
-      </section>
-
-      <section>
-        <div id="events" class="clearfix grid">
-          <figure class="effect-oscar  wowload fadeInUp">
-            <img src={event1} alt="img01" />
-            <figcaption>
-              <h2>Event 1 </h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
-                aut ad.
-              </p>
-            </figcaption>
-          </figure>
-          </div>
-      </section>
-
     </div>
   )
 }
