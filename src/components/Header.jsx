@@ -15,9 +15,6 @@ const Header = () => {
                   <li class="scroll-to-section"><a href="#ayuda">Help</a></li>
                   <li class="scroll-to-section"><Link to='/Login'>Login</Link></li>
                 </ul>
-                <a class='menu-trigger'>
-                  <span>Menu</span>
-                </a>
               </nav>
             </div>
           </div>

@@ -14,7 +14,6 @@ const Main = () => {
       <Banner />
       <Events />
       <Footer />
-
     </div>
   )
 }
