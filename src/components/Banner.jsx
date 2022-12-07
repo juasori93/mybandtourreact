@@ -13,11 +13,8 @@ const Banner = () => {
                 <div class="caption">
                     <div class="caption-wrapper">
                         <div class="caption-info">
-                            <h1 class="animated bounceInUp">Lorem ipsum dolor sit amet.</h1>
-                            <p class="animated bounceInLeft">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                                quasi eligendi aut debitis? </p>
-                            <div class="animated bounceInDown"><a href="#events" class="btn btn-default explore">Ver Eventos</a>
-                            </div>
+                            <h1 class="animated bounceInUp">MYBANDTOUR</h1>
+                            <p class="animated bounceInLeft">A place where you can buy your emotions </p>
                         </div>
                     </div>
                 </div>
