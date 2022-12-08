@@ -1,6 +1,6 @@
 import { createTMBTCATUsuario as createUsuarios} from '../graphql/mutations';
 import { ToastContainer, toast } from 'react-toastify';
-import React, { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { API } from 'aws-amplify';
 

@@ -1,9 +1,9 @@
-import React from 'react'
-import '../css/font-awesome.css'
-import '../css/templatemo-training-studio.css'
-import '../css/animate.css'
-import '../css/set.css'
-import '../css/blueimp-gallery.min.css'
+import { React } from 'react';
+import '../css/font-awesome.css';
+import '../css/templatemo-training-studio.css';
+import '../css/animate.css';
+import '../css/set.css';
+import '../css/blueimp-gallery.min.css';
 
 
 const Banner = () => {
