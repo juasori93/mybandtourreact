@@ -4,7 +4,7 @@ import '../css/templatemo-training-studio.css';
 import '../css/animate.css';
 import '../css/set.css';
 import '../css/blueimp-gallery.min.css';
-import { event1 } from '../assets/images/music1.jpg';
+import image1 from '../assets/images/music1.jpg';
 
 
 const Events = () => {
@@ -13,7 +13,7 @@ const Events = () => {
       <section>
         <div id="events" class="clearfix grid">
           <figure class="effect-oscar  wowload fadeInUp">
-            <img src={event1} alt="img01" />
+            <img src={image1} alt="img01" />
             <figcaption>
               <h2>Event 1 </h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, culpa? Iste harum necessitatibus
