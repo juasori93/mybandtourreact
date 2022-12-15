@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/images/music1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.formRegister {
+  width: 400px;
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: #B03A2E;
+  text-align: center;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.formRegister h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #B03A2E;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: #ffff;
+}
+
+.formRegister p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.formRegister a {
+  color: #ffff  ;
+  text-decoration: none;
+}
+
+.formRegister a:hover {
+  color: #ffff;
+  text-decoration: underline;
+}
+
+.formRegister .botons {
+  width: 100%;
+  background: #B03A2E;
+  border: none;
+  padding: 12px;
+  color: #ffff;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+/*
+ .formRegister {
+   width: 400px;
+   background: #24303c;
+   padding: 30px;
+   margin: auto;
+   margin-top: 10%;
+   border-radius: 4px;
+   font-family: 'calibri';
+   color: #B03A2E;
+   text-align: center;
+   box-shadow: 7px 13px 37px #000;
+ }
+
+ .prueba{
+  width: 400px;
+ }
+
+ .formulario {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .formulario_input {
+   
+ }
+
+*/

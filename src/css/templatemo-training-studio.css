@@ -1269,9 +1269,6 @@ form {
   right: 0;
   white-space: nowrap;
 }
-input {
-  position: absolute;
-}
 
 input:focus ~ .keys {
   opacity: 0.8;
