@@ -1,21 +1,22 @@
-import { createTMBTCATUsuario as createUsuarios} from '../graphql/mutations';
+import { createTMBTCATUsuario as createUsuarios } from '../graphql/mutations';
 import { ToastContainer, toast } from 'react-toastify';
 import { React, useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { API } from 'aws-amplify';
+import '../css/register.css';
 
-const initialFormState = { name:'', email: '', password: '' }
+const initialFormState = { name: '', email: '', password: '' }
 
 
 const showToastMessage = () => {
   toast.success('Te has inscrito con exito', {
-      position: toast.POSITION.TOP_RIGHT
+    position: toast.POSITION.TOP_RIGHT
   });
 };
 
 const handleSubmit = async (e) => {
   e.preventDefault()
-  const {target} = e
+  const { target } = e
   try {
     await API.graphql({
       query: createUsuarios,
@@ -34,6 +35,27 @@ const handleSubmit = async (e) => {
 
 const Signup = () => {
   return (
+
+    <section class="formRegister">
+      <h4>Sign Up</h4>
+      <form className='formulario'>
+        <div className='prueba'>
+          <input class="controls" type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div>
+          <input class="controls" type="text" name="lastname" id="lastname" placeholder="Last Name" />
+        </div>
+        <div>
+          <input class="controls" type="email" name="email" id="email" placeholder="E-mail" />
+        </div>
+        <div>
+          <input class="controls" type="password" name="pass" id="pass" placeholder="Password" />
+        </div>
+        <button className='botons' type="submit" value="Signup"> Create account </button>
+      </form>
+
+    </section>
+    /*
     <div class="limiter">
       <div class="container-login100">
         <div class="wrap-login100 p-t-85 p-b-20">
@@ -67,6 +89,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+    */
   )
 }
 

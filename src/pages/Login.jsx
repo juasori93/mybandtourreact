@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/register.css';
+import { Link } from 'react-router-dom';
 
-import { Link } from 'react-router-dom'
 
 const Login = () => {
 	return (
@@ -16,7 +16,7 @@ const Login = () => {
 					<input className='controls' type="password" required="required" placeholder="Password" />
 				</div>
 				<button className='botons' type="submit" value="Login"> Login </button>
-				<p><a href="signup.html">Signup</a></p>
+				<p><Link to='/Signup'>Signup</Link></p>
 			</form>
 
 		</section>
