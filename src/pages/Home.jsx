@@ -1,11 +1,17 @@
 import React from 'react'
+import HeaderProfile from '../components/HeaderProfile';
+import Events from '../components/Events';
 
 const Home = () => {
   return (
-    <div class='limiter'>
-      <h1 class="login100-form-title p-b-70">
-        Home
-        </h1>
+    <div>
+      <HeaderProfile />
+      
+      <div>
+      
+        <Events />
+      </div>
+
     </div>
   )
 }
