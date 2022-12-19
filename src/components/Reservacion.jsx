@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState } from 'react';
 import '../css/font-awesome.css';
 import '../css/templatemo-training-studio.css';
 import '../css/animate.css';
@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { API } from 'aws-amplify';
+import { listTMBTCATEventos } from '../graphql/queries';
 import { createTMBTCATBoleto as createBoleto } from '../graphql/mutations';
+
 
 const showToastMessage = () => {
     toast.success('Te has inscrito con exito', {
@@ -26,9 +28,11 @@ const showToastMessage = () => {
         query: createBoleto,
         variables: {
           input: {
-            TC_Nombre: target.fullname.value,
-            TC_Correo: target.email.value,
-            TC_Clave: target.pass.value,
+            TN_Id_Evento: 1,
+            TC_Fila: "A",
+            TC_Tipo: "Pop",
+            TC_Asiento: 5,
+            TN_Precio: 300,
           },
         },
       })
@@ -36,6 +40,14 @@ const showToastMessage = () => {
     } catch (error) {
       console.log(e)
     }
+  }
+
+  let eventos = fetchVents();
+
+  async function fetchVents() {
+    const apiData = await API.graphql({ query: listTMBTCATEventos });
+    const notesFromAPI = apiData.data.listTMBTCATEventos.TC_Nombre;
+    return notesFromAPI;
   }
 
 
@@ -49,12 +61,15 @@ const Reservacion = () => {
             </div>
             <form action="submit">
                 <h2 class="titulo"> Selecciona tu campo</h2>
-                <select name="Asiento" id="asiento"></select>
+                <select name="Asiento" id="asiento" >
+                    <option value="Coldplay">Coldplay - Palco Norte - A5</option>
+                </select>
                 <br />
                 <br />
-                <input class="controls"  type="text" id="nombre" placeholder='Nombre Completo'/>
+                <input class="controls"  type="email" id="Correo" placeholder='Correo Electronico'/>
                 <br />
                 <br />
+                <h1>Precio: $300</h1>
                 <br />
                 <button class="btn btn-default"  onClick={handleSubmit} id="submit"> Reservar boleto </button>
                 <br/>
