@@ -52,7 +52,7 @@ const Reservacion = () => {
                 <select name="Asiento" id="asiento"></select>
                 <br />
                 <br />
-                <input class="controls"  type="text" id="nombre"/>
+                <input class="controls"  type="text" id="nombre" placeholder='Nombre Completo'/>
                 <br />
                 <br />
                 <button class="btn btn-default"  onClick={handleSubmit} id="submit"> Reservar boleto </button>
