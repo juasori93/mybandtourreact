@@ -28,6 +28,7 @@ const handleSubmit = async (e) => {
         },
       },
     })
+    showToastMessage();
   } catch (error) {
     console.log(e)
   }
@@ -51,7 +52,8 @@ const Signup = () => {
         <div>
           <input class="controls" type="password" name="pass" id="pass" placeholder="Password" />
         </div>
-        <button className='botons' type="submit" value="Signup"> Create account </button>
+        <button className='botons' onClick={handleSubmit} type="submit" value="Signup"> Create account </button>
+        <ToastContainer/>  
       </form>
 
     </section>

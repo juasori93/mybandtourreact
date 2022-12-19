@@ -5,6 +5,7 @@ import Signup from '../pages/Signup';
 import Main from '../pages/Main';
 import Home from '../pages/Home';
 import Testing from '../pages/Testing';
+import Reserva from '../pages/Reserva';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path : '/Home', element : <Home />
     },
+    {
+        path : '/Reserva', element : <Reserva />
+    },
+
 
 ]);
 
