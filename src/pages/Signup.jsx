@@ -41,16 +41,16 @@ const Signup = () => {
       <h4>Sign Up</h4>
       <form className='formulario'>
         <div className='prueba'>
-          <input class="controls" type="text" name="name" id="name" placeholder="Name" />
+          <input class="control" type="text" name="name" id="name" placeholder="Name" />
         </div>
         <div>
-          <input class="controls" type="text" name="lastname" id="lastname" placeholder="Last Name" />
+          <input class="control" type="text" name="lastname" id="lastname" placeholder="Last Name" />
         </div>
         <div>
-          <input class="controls" type="email" name="email" id="email" placeholder="E-mail" />
+          <input class="control" type="email" name="email" id="email" placeholder="E-mail" />
         </div>
         <div>
-          <input class="controls" type="password" name="pass" id="pass" placeholder="Password" />
+          <input class="control" type="password" name="pass" id="pass" placeholder="Password" />
         </div>
         <button className='botons' onClick={handleSubmit} type="submit" value="Signup"> Create account </button>
         <ToastContainer/>  

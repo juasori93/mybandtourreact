@@ -10,10 +10,10 @@ const Login = () => {
 			<h4>Login</h4>
 			<form className='formulario'>
 				<div className='prueba'>
-					<input className='controls' type="text" required="required" placeholder="E-mail" />
+					<input className='control' type="text" required="required" placeholder="E-mail" />
 				</div>
 				<div>
-					<input className='controls' type="password" required="required" placeholder="Password" />
+					<input className='control' type="password" required="required" placeholder="Password" />
 				</div>
 				<button className='botons' type="submit" value="Login"> Login </button>
 				<p><Link to='/Signup'>Signup</Link></p>
