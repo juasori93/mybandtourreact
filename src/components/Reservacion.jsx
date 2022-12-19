@@ -3,6 +3,7 @@ import '../css/font-awesome.css';
 import '../css/templatemo-training-studio.css';
 import '../css/animate.css';
 import '../css/set.css';
+import '../css/style.css';
 import '../css/blueimp-gallery.min.css';
 import selenacional2 from '../assets/images/selenacional2.jpg';
 import { Link } from 'react-router-dom';
@@ -41,23 +42,22 @@ const showToastMessage = () => {
 const Reservacion = () => {
   return (
     <div background-color="white" alignItems='center' align='center' padding-top="300">
-      <section alignItems='center'>
+      <section class="form-reserva" alignItems='center'>
         <div id="reservaciones" class="clearfix grid">
-            <div>
-                <img src={selenacional2} alt="Estadio nacional" />
+            <div class="imgreserva">
+                <img  src={selenacional2} alt="Estadio nacional" />
             </div>
-            <br />
-            <br />
             <form action="submit">
-                <h2> Selecciona tu campo</h2>
+                <h2 class="titulo"> Selecciona tu campo</h2>
                 <select name="Asiento" id="asiento"></select>
                 <br />
                 <br />
-                <p> Nombre Completo</p>
-                <input type="text" id="nombre"/>
+                <input class="controls"  type="text" id="nombre"/>
                 <br />
                 <br />
-                <button onClick={handleSubmit} id="submit"> Reservar boleto </button>
+                <button class="btn btn-default"  onClick={handleSubmit} id="submit"> Reservar boleto </button>
+                <br/>
+                <br/>
                 <ToastContainer/>    
             </form>
           </div>
